@@ -31,7 +31,7 @@ jQuery.fn.tapir = function() {
     c.bezierCurveTo(83, 90, 87, 90, 70, 90);
     c.bezierCurveTo(63, 60, 67, 60, 67, 60);
     c.bezierCurveTo(55, 57, 55, 55, 50, 50);
-    c.bezierCurveTo(12, 50, 12, 70, 12, 60);
+    c.bezierCurveTo(10, 50, 7, 70, 12, 60);
     c.fill();
     c.closePath();
   }
@@ -66,7 +66,15 @@ jQuery.fn.tapir = function() {
   function drawBack(c) {
     c.beginPath();
     c.moveTo(68, 32);
-    c.bezierCurveTo(150, 20, 150, 30, 153, 60);
+    c.bezierCurveTo(120, 10 , 155, 30, 153, 60);
+    c.stroke();
+    c.closePath();
+  }
+
+  function drawEye(c) {
+    c.strokeStyle = 'black';
+    c.beginPath();
+    c.arc(50, 38, 1, 0, Math.PI * 2);
     c.stroke();
     c.closePath();
   }
@@ -79,6 +87,7 @@ jQuery.fn.tapir = function() {
     drawBackLeg(c);
     drawStomach(c);
     drawBack(c);
+    drawEye(c);
   });
 
 }
